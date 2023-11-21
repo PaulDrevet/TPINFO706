@@ -1,11 +1,15 @@
-package com.example.demo;
+package com.example.demo.servlet;
 
 import java.io.*;
+
+import jakarta.ejb.EJB;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 @WebServlet(name = "helloServlet", value = "/hello-servlet")
 public class HelloServlet extends HttpServlet {
+    @EJB
+    private com.example.demo.EJB.GestionTicketBean gestionTicketBean;
     private String message;
 
     public void init() {
@@ -14,7 +18,6 @@ public class HelloServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
-
         // Hello
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
