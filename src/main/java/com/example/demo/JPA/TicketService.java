@@ -5,14 +5,14 @@ import com.example.demo.Ticket;
 import jakarta.ejb.TransactionManagement;
 import jakarta.ejb.TransactionManagementType;
 import jakarta.persistence.*;
-import jdk.dynalink.Operation;
 
 import java.util.List;
 
 @TransactionManagement(TransactionManagementType.BEAN)
-public class TicketService implements Operation {
+public class TicketService {
 
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("TicketJpaUnit");
+    @PersistenceContext
     EntityManager em = emf.createEntityManager();
 
     public void createTicket(Ticket ticket) {
