@@ -10,24 +10,24 @@
     />
 </head>
 <body>
-<div class="flex flex-col">
-    <div>
-        <h1 class="bold w-20">Parking</h1>
+<div class="w-screen">
+    <div class="w-screen flex justify-center p-10 mb-10 bg-red-500">
+        <h1 class="text-3xl">Parking</h1>
     </div>
-    <div class="flex justify-evenly content-end">
-        <div>
+    <div class="flex h-full w-full justify-evenly items-center">
+        <div class="bg-slate-500 hover:bg-slate-800 ease-in-out shadow-xl duration-300 hover:cursor-pointer p-10 rounded-3xl w-1/4">
             <p>Borne entrée</p>
             <a href="ticket">
                 <img src="assets/656140.png" alt="aveugle" width="40%">
             </a>
         </div>
-        <div >
+        <div class="bg-slate-500 p-10 rounded-3xl w-1/4">
             <p>Borne paiement</p>
             <a href="ticket">
                 <img src="assets/paiement.png" alt="aveugle" width="40%">
             </a>
         </div>
-        <div>
+        <div class="bg-slate-500 p-10 rounded-3xl w-1/4">
             <p>Borne sortie</p>
             <a href="ticket">
                 <img src="assets/656140.png" alt="aveugle" width="40%">
