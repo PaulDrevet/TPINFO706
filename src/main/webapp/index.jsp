@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html class="h-screen bg-slate-900">
 <head>
-    <title>JSP - Hello World</title>
+    <title>Parking</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
             rel="stylesheet"
@@ -17,19 +17,7 @@
     <div class="flex h-full w-full justify-evenly items-center">
         <div class="bg-slate-500 hover:bg-slate-800 ease-in-out shadow-xl duration-300 hover:cursor-pointer p-10 rounded-3xl w-1/4">
             <p>Borne entrée</p>
-            <a href="ticket">
-                <img src="assets/656140.png" alt="aveugle" width="40%">
-            </a>
-        </div>
-        <div class="bg-slate-500 p-10 rounded-3xl w-1/4">
-            <p>Borne paiement</p>
-            <a href="ticket">
-                <img src="assets/paiement.png" alt="aveugle" width="40%">
-            </a>
-        </div>
-        <div class="bg-slate-500 p-10 rounded-3xl w-1/4">
-            <p>Borne sortie</p>
-            <a href="ticket">
+            <a href="entree">
                 <img src="assets/656140.png" alt="aveugle" width="40%">
             </a>
         </div>

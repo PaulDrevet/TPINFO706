@@ -28,6 +28,7 @@ public class Ticket {
     public void setDateSortie() {
         this.dateSortie = new Date();
     }
+
     public Long getId() {
         return id;
     }
@@ -36,4 +37,8 @@ public class Ticket {
         this.dateEntree = new Date();
         this.dateSortie = null;
     }
+
+    public String toString(){
+        return "oui";
+         }
 }
