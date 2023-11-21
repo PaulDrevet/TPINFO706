@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-@WebServlet(name ="ticketServlet", value = "/ticket")
+@WebServlet(name ="paiementServlet", value = "/paiement")
 public class PaiementServlet extends HttpServlet {
     @EJB
     private TicketService ticketService;
@@ -23,15 +23,21 @@ public class PaiementServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
 
-        Ticket ticket = ticketService.createTicket();
 
-
+        HttpSession session = request.getSession();
+        Long id = (Long) session.getAttribute("ticketId");
+        if (id == null) {
+            request.setAttribute("ticket", null);
+        }
+        else{
+            Ticket ticket = ticketService.getTicket(id);
+            request.setAttribute("ticket", ticket);
+        }
 
         try {
-            request.getRequestDispatcher("/entree.jsp").forward(request, response);
+            request.getRequestDispatcher("/paiement.jsp").forward(request, response);
         } catch (ServletException | IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 }

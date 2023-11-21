@@ -19,6 +19,10 @@ public class TicketService {
         entityManager.persist(ticket);
         return ticket;
     }
+
+    public Ticket getTicket(Long id){
+        return entityManager.find(Ticket.class, id);
+    }
     public TicketService(){}
 
     // Autres méthodes de gestion des tickets

@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-@WebServlet(name ="ticketServlet", value = "/entree")
+@WebServlet(name ="entreeServlet", value = "/entree")
 public class EntreeServlet extends HttpServlet {
     @EJB
     private TicketService ticketService;
