@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
-<html>
+<html class="h-screen bg-slate-900">
 <head>
     <title>JSP - Hello World</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="w-screen">
-    <div class="w-screen flex justify-center p-10 mb-10 bg-red-500">
+    <div class="w-screen flex justify-center p-10 mb-10 bg-red-800">
         <h1 class="text-3xl">Parking</h1>
     </div>
     <div class="flex h-full w-full justify-evenly items-center">
