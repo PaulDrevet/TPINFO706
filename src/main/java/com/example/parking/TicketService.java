@@ -25,5 +25,4 @@ public class TicketService {
     }
     public TicketService(){}
 
-    // Autres méthodes de gestion des tickets
 }

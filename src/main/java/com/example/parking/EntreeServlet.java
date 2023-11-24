@@ -21,7 +21,6 @@ public class EntreeServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
 
-
         Ticket ticket = ticketService.createTicket();
         HttpSession session = request.getSession();
         session.setAttribute("ticketId", ticket.getId());

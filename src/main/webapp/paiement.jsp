@@ -12,14 +12,20 @@
 <body>
 
 <div class="w-screen">
-    <div class="card">
-        <div class="card-body">
-            <h2 class="card-header justify-center">${ticket.id}</h2>
-            <p class="text-content2">${ticket.dateEntree}</p>
-            <div class="card-footer">
-                <button class="btn-secondary btn">Learn More</button>
+    <div class="w-screen flex justify-center p-10 mb-10 bg-red-800">
+        <h1 class="text-3xl">Borne paiement</h1>
+    </div>
+    <div class="w-screen flex justify-center">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-header justify-center">Ticket</h2>
+                <p class="text-content2">Numéro de ticket : ${ticket.id}</p>
+                <p class="text-content2">Date d'entrée : ${ticket.dateEntree.day}/${ticket.dateEntree.month} à ${ticket.dateEntree.hours}h${ticket.dateEntree.minutes}</p>
             </div>
         </div>
+    </div>
+    <div class="w-screen flex justify-center pt-20">
+        <button class="btn btn-solid-success">Payer</button>
     </div>
 
 </div>

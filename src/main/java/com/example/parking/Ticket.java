@@ -37,8 +37,4 @@ public class Ticket {
         this.dateEntree = new Date();
         this.dateSortie = null;
     }
-
-    public String toString(){
-        return "oui";
-         }
 }
