@@ -72,4 +72,17 @@ public class Ticket {
 
         return montantArrondi.doubleValue();
     }
+
+    public boolean canExit(){
+        if (this.paiements.isEmpty()) {
+            return false;
+        }
+        else {
+            Duration duration;
+            Date now = new Date();
+            Date dernierPaiment = this.paiements.get(paiements.size() - 1).getDatePaiement();
+            duration = Duration.between(dernierPaiment.toInstant(), now.toInstant());
+            return duration.toSeconds() < 30;
+        }
+    }
 }

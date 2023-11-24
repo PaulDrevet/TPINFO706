@@ -23,7 +23,7 @@
         </div>
         <div class="bg-slate-500 hover:bg-slate-800 ease-in-out shadow-xl duration-300 hover:cursor-pointer p-10 rounded-3xl w-1/4">
             <p>Borne sortie</p>
-            <a href="">
+            <a href="sortie">
                 <img src="assets/656140.png" alt="aveugle" width="40%">
             </a>
         </div>

@@ -1,5 +1,7 @@
-package com.example.parking;
+package com.example.parking.Servlet;
 
+import com.example.parking.Ticket;
+import com.example.parking.TicketService;
 import jakarta.ejb.EJB;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
