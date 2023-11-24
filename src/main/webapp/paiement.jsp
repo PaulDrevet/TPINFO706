@@ -25,7 +25,10 @@
         </div>
     </div>
     <div class="w-screen flex justify-center pt-20">
-        <button class="btn btn-solid-success">Payer</button>
+        <form method="post" action="paiement">
+            <input type="submit" name="boutonSubmit" value="Paiement CB" class="rounded p-2 border-2 border-white">
+            <input type="submit" name="boutonSubmit" value="Paiement Especes" class="rounded p-2 ml-2 border-2 rounded-mg border-white">
+        </form>
     </div>
 
 </div>

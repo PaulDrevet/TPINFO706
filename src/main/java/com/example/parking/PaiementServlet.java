@@ -17,7 +17,24 @@ public class PaiementServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 
-        ticketService.createTicket();
+        String valeurBouton = request.getParameter("boutonSubmit");
+        System.out.println(valeurBouton);
+
+        HttpSession session = request.getSession();
+        Long id = (Long) session.getAttribute("ticketId");
+        Ticket ticket = ticketService.getTicket(id);
+
+        Paiement paiement = new Paiement(valeurBouton, 2.5, ticket);
+        ticket.addPaiement(paiement);
+        ticketService.updateTicket(ticket);
+
+        System.out.println(ticket.getPaiement());
+
+        try {
+            request.getRequestDispatcher("/entree.jsp").forward(request, response);
+        } catch (ServletException | IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 

@@ -3,6 +3,7 @@ package com.example.parking;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Ticket {
@@ -16,6 +17,9 @@ public class Ticket {
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateSortie;
 
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Paiement> paiements;
+
 
     public Date getDateEntree() {
         return dateEntree;
@@ -27,6 +31,14 @@ public class Ticket {
 
     public void setDateSortie() {
         this.dateSortie = new Date();
+    }
+
+    public void addPaiement(Paiement paiement){
+        this.paiements.add(paiement);
+    }
+
+    public List<Paiement> getPaiement(){
+        return this.paiements;
     }
 
     public Long getId() {

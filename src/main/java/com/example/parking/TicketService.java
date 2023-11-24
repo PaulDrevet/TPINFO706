@@ -20,6 +20,11 @@ public class TicketService {
         return ticket;
     }
 
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    public void updateTicket(Ticket ticket){
+        entityManager.merge(ticket);
+    }
+
     public Ticket getTicket(Long id){
         return entityManager.find(Ticket.class, id);
     }
