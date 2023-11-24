@@ -31,7 +31,15 @@ public class PaiementServlet extends HttpServlet {
             request.setAttribute("ticket_id", ticket.getId());
             request.setAttribute("total", ticket.calculerTotal());
             request.setAttribute("date_entree", ticket.getDateEntree());
-            request.setAttribute("date_paiement", ticket.getLastDatePaiement());
+            if (ticket.getPaiement().isEmpty()){
+                request.setAttribute("date_paiement", null);
+                request.setAttribute("aPaye", false);
+            }
+            else{
+                request.setAttribute("date_paiement", ticket.getLastDatePaiement());
+                request.setAttribute("aPaye", true);
+            }
+            System.out.println(request.getAttribute("date_paiement"));
             try {
                 request.getRequestDispatcher("/recapitulatif.jsp").forward(request, response);
             } catch (ServletException | IOException e) {
