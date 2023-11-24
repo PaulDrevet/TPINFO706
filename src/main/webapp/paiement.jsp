@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:useBean id="ticket" scope="request" class="com.example.parking.Ticket" />
+<jsp:useBean id="montant" scope="request" type="java.lang.Double"/>
+
 <html>
 <head>
     <title>Title</title>
@@ -24,10 +26,13 @@
             </div>
         </div>
     </div>
-    <div class="w-screen flex justify-center pt-20">
+    <div class="w-screen flex justify-center pt-10">
+        <p>Vous devez payer ${montant} $</p>
+    </div>
+    <div class="w-screen flex justify-center pt-8">
         <form method="post" action="paiement">
-            <input type="submit" name="boutonSubmit" value="Paiement CB" class="rounded p-2 border-2 border-white">
-            <input type="submit" name="boutonSubmit" value="Paiement Especes" class="rounded p-2 ml-2 border-2 rounded-mg border-white">
+            <input type="submit" name="boutonSubmit" value="Paiement CB" class="rounded p-2 border-2 border-white hover:cursor-pointer transition-all hover:bg-slate-700">
+            <input type="submit" name="boutonSubmit" value="Paiement Especes" class="rounded p-2 ml-2 border-2 rounded-mg border-white transition-all hover:cursor-pointer hover:bg-slate-700">
         </form>
     </div>
 

@@ -43,11 +43,15 @@ public class PaiementServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
         Long id = (Long) session.getAttribute("ticketId");
+
         if (id == null) {
             request.setAttribute("ticket", null);
         }
         else{
             Ticket ticket = ticketService.getTicket(id);
+            double montant = ticket.calculerMontant();
+
+            request.setAttribute("montant", montant);
             request.setAttribute("ticket", ticket);
         }
 

@@ -23,6 +23,10 @@ public class Paiement {
     public Paiement(){
     }
 
+    public Date getDatePaiement() {
+        return datePaiement;
+    }
+
     public Paiement(String typePaiement, double montant, Ticket ticket) {
         this.datePaiement = new Date();
         this.typePaiement = typePaiement;

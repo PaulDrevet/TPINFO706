@@ -12,7 +12,7 @@
 
 <div class="w-screen">
     <div class="w-screen flex justify-center p-10 mb-10 bg-red-800">
-        <h1 class="text-3xl">Dans le parking</h1>
+        <h1 class="text-3xl">Vous êtes dans le parking</h1>
     </div>
     <div class="flex justify-evenly w-full pt-10">
         <div class="bg-slate-500 hover:bg-slate-800 ease-in-out shadow-xl duration-300 hover:cursor-pointer p-10 rounded-3xl w-1/4">

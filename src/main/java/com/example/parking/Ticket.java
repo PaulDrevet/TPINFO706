@@ -2,6 +2,9 @@ package com.example.parking;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.time.Duration;
 import java.util.Date;
 import java.util.List;
 
@@ -48,5 +51,25 @@ public class Ticket {
     public Ticket (){
         this.dateEntree = new Date();
         this.dateSortie = null;
+    }
+
+    public double calculerMontant(){
+        double montant = 0;
+        Date now = new Date();
+        if (this.dateSortie != null){
+            throw new IllegalStateException("Vous êtes deja sorti");
+        }
+        Duration duration;
+        if (this.paiements.isEmpty()){
+            duration = Duration.between(this.dateEntree.toInstant(), now.toInstant());
+        }
+        else{
+            Date dernierPaiment = this.paiements.get(paiements.size() - 1).getDatePaiement();
+            duration = Duration.between(dernierPaiment.toInstant(), now.toInstant());
+        }
+        montant = duration.toSeconds() * 0.03;
+        BigDecimal montantArrondi = BigDecimal.valueOf(montant).setScale(2, RoundingMode.HALF_UP);
+
+        return montantArrondi.doubleValue();
     }
 }
