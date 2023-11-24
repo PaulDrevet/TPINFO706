@@ -47,10 +47,9 @@ public class PaiementServlet extends HttpServlet {
             }
         }
         else{
-            Paiement paiement = new Paiement(valeurBouton, 2.5, ticket);
+            Paiement paiement = new Paiement(valeurBouton, ticket.calculerMontant(), ticket);
             ticket.addPaiement(paiement);
             ticketService.updateTicket(ticket);
-
             System.out.println(ticket.getPaiement());
 
             try {
