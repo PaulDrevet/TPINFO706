@@ -27,18 +27,30 @@ public class PaiementServlet extends HttpServlet {
         Long id = (Long) session.getAttribute("ticketId");
         Ticket ticket = ticketService.getTicket(id);
 
-        Paiement paiement = new Paiement(valeurBouton, 2.5, ticket);
-        ticket.addPaiement(paiement);
-        ticketService.updateTicket(ticket);
-
-        System.out.println(ticket.getPaiement());
-
-        try {
-            request.getRequestDispatcher("/entree.jsp").forward(request, response);
-        } catch (ServletException | IOException e) {
-            throw new RuntimeException(e);
+        if (valeurBouton.equals("Recapitulatif paiement")){
+            request.setAttribute("ticket_id", ticket.getId());
+            request.setAttribute("total", ticket.calculerTotal());
+            request.setAttribute("date_entree", ticket.getDateEntree());
+            request.setAttribute("date_paiement", ticket.getLastDatePaiement());
+            try {
+                request.getRequestDispatcher("/recapitulatif.jsp").forward(request, response);
+            } catch (ServletException | IOException e) {
+                throw new RuntimeException(e);
+            }
         }
+        else{
+            Paiement paiement = new Paiement(valeurBouton, 2.5, ticket);
+            ticket.addPaiement(paiement);
+            ticketService.updateTicket(ticket);
 
+            System.out.println(ticket.getPaiement());
+
+            try {
+                request.getRequestDispatcher("/entree.jsp").forward(request, response);
+            } catch (ServletException | IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {

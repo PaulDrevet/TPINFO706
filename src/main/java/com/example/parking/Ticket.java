@@ -40,6 +40,10 @@ public class Ticket {
         this.paiements.add(paiement);
     }
 
+    public Date getLastDatePaiement(){
+        return this.paiements.get(paiements.size() - 1).getDatePaiement();
+    }
+
     public List<Paiement> getPaiement(){
         return this.paiements;
     }
@@ -71,6 +75,14 @@ public class Ticket {
         BigDecimal montantArrondi = BigDecimal.valueOf(montant).setScale(2, RoundingMode.HALF_UP);
 
         return montantArrondi.doubleValue();
+    }
+
+    public double calculerTotal(){
+        double montant = 0;
+        for (Paiement paiement : this.paiements){
+            montant += paiement.getMontant();
+        }
+        return montant;
     }
 
     public boolean canExit(){

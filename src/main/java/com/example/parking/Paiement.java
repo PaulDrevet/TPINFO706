@@ -33,4 +33,8 @@ public class Paiement {
         this.montant = montant;
         this.ticket = ticket;
     }
+
+    public double getMontant() {
+        return montant;
+    }
 }

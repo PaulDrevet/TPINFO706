@@ -35,6 +35,11 @@
             <input type="submit" name="boutonSubmit" value="Paiement Especes" class="rounded p-2 ml-2 border-2 rounded-mg border-white transition-all hover:cursor-pointer hover:bg-slate-700">
         </form>
     </div>
+    <div class="w-screen flex justify-center pt-8">
+        <form method="post" action="paiement">
+            <input type="submit" name="boutonSubmit" value="Recapitulatif paiement" class="rounded p-2 ml-2 border-2 rounded-mg border-white transition-all hover:cursor-pointer hover:bg-slate-700">
+        </form>
+    </div>
     <div class="fixed bottom-0 left-0 p-4">
         <a class="" href="entree.jsp">
             <div>
