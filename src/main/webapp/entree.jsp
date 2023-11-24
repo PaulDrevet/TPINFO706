@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Parking PA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
             rel="stylesheet"
@@ -15,18 +15,20 @@
         <h1 class="text-3xl">Vous êtes dans le parking</h1>
     </div>
     <div class="flex justify-evenly w-full pt-10">
-        <div class="bg-slate-500 hover:bg-slate-800 ease-in-out shadow-xl duration-300 hover:cursor-pointer p-10 rounded-3xl w-1/4">
+        <a href="paiement" class="w-1/4">
+
+        <div class="bg-slate-500 hover:bg-slate-800 ease-in-out shadow-xl duration-300 hover:cursor-pointer p-10 rounded-3xl w-full">
             <p>Borne paiement</p>
-            <a href="paiement">
-                <img src="assets/paiement.png" alt="aveugle" width="40%">
-            </a>
+            <img src="assets/paiement.png" alt="aveugle" width="40%">
         </div>
-        <div class="bg-slate-500 hover:bg-slate-800 ease-in-out shadow-xl duration-300 hover:cursor-pointer p-10 rounded-3xl w-1/4">
+        </a>
+
+        <a href="sortie" class="w-1/4">
+        <div class="bg-slate-500 hover:bg-slate-800 ease-in-out shadow-xl duration-300 hover:cursor-pointer p-10 rounded-3xl w-full">
             <p>Borne sortie</p>
-            <a href="sortie">
                 <img src="assets/656140.png" alt="aveugle" width="40%">
-            </a>
         </div>
+        </a>
     </div>
 </div>
 

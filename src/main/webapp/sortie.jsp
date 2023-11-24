@@ -3,7 +3,7 @@
 
 <html>
 <head>
-    <title>Title</title>
+    <title>Parking PA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
             rel="stylesheet"

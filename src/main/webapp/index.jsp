@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html class="h-screen bg-slate-900">
 <head>
-    <title>Parking</title>
+    <title>Parking PA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
             rel="stylesheet"
@@ -15,12 +15,15 @@
         <h1 class="text-3xl">Parking</h1>
     </div>
     <div class="flex h-full w-full justify-evenly items-center">
-        <div class="bg-slate-500 hover:bg-slate-800 ease-in-out shadow-xl duration-300 hover:cursor-pointer p-10 rounded-3xl w-1/4">
+        <a href="entree" class="w-1/4">
+        <div class="bg-slate-500 hover:bg-slate-800 ease-in-out shadow-xl duration-300 hover:cursor-pointer p-10 rounded-3xl w-full">
             <p>Borne entrée</p>
-            <a href="entree">
+            <div>
                 <img src="assets/656140.png" alt="aveugle" width="40%">
-            </a>
+            </div>
         </div>
+        </a>
+
     </div>
 </div>
 
