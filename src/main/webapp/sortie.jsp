@@ -9,22 +9,37 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/rippleui@1.12.1/dist/css/styles.css"
     />
+    <style>
+        .tailwind-button.button-disabled {
+            cursor: not-allowed;
+        }
+        .tailwind-button.button-enabled{
+            cursor: pointer;
+        }
+    </style>
     <script>
         function checkCanExit() {
             var canExitValue = <%= canExit %>;
+            var sortirButton = document.getElementById("sortirButton");
 
-            if (canExitValue) {
-                // Si canExit vaut true, le bouton est clickable
-                document.getElementById("sortirButton").removeAttribute("disabled");
-            } else {
-                // Sinon, afficher le message et griser le bouton
-                alert("Vous devez avoir payé depuis moins de 30 secondes.");
-                document.getElementById("sortirButton").setAttribute("disabled", "true");
+            if (!canExitValue) {
+                sortirButton.classList.add("button-disabled", "tailwind-button");
+                sortirButton.setAttribute("disabled", "true");
+                document.getElementById("message").innerText = "Vous devez avoir payé depuis moins de 30 secondes.";
+            }
+            else{
+                sortirButton.classList.add("button-enabled", "tailwind-button");
+                document.getElementById("message").innerText = "";
             }
         }
+
+        // Exécuter la fonction au chargement de la page
+        window.onload = function() {
+            checkCanExit();
+        };
     </script>
 </head>
-<body>
+<body class="flex flex-col min-h-screen">
 
 <div class="w-screen">
     <div class="w-screen flex justify-center p-10 mb-10 bg-red-800">
@@ -32,9 +47,21 @@
     </div>
     <div class="w-screen flex justify-center pt-8">
         <form method="post" action="sortie">
-            <input type="submit" id="sortirButton" name="boutonSubmit" value="Sortir du parking" class="rounded p-2 ml-2 border-2 rounded-mg border-white transition-all hover:cursor-pointer hover:bg-slate-700" onclick="checkCanExit()">
+            <input type="submit" id="sortirButton" name="boutonSubmit" value="Sortir du parking" class="tailwind-button rounded p-2 ml-2 border-2 rounded-mg border-white transition-all hover:bg-slate-700" onclick="checkCanExit()">
         </form>
     </div>
+</div>
+
+<!-- Message affiché au-dessus du bouton -->
+<div class="text-red-500 text-center" id="message"></div>
+
+<!-- Bouton "Retour" centré en bas de la page -->
+<div class="fixed bottom-0 left-0 p-4">
+    <a class="" href="entree.jsp">
+        <div>
+            <button class="rounded p-2 border-2 border-red-500 hover:cursor-pointer transition-all hover:bg-red-500 hover:text-white">Retour</button>
+        </div>
+    </a>
 </div>
 
 </body>
