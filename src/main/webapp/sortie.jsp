@@ -25,7 +25,7 @@
             if (!canExitValue) {
                 sortirButton.classList.add("button-disabled", "tailwind-button");
                 sortirButton.setAttribute("disabled", "true");
-                document.getElementById("message").innerText = "Vous devez avoir payé depuis moins de 30 secondes.";
+                document.getElementById("message").innerText = "Vous devez avoir payé depuis moins de 15 secondes.";
             }
             else{
                 sortirButton.classList.add("button-enabled", "tailwind-button");
