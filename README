@@ -1,0 +1,30 @@
+DREVET PAUL
+DUPASQUIER ANTOINE
+
+RENDU TP INFO 706
+
+-------------------------------------
+
+## 1. Choix d'implémentations
+
+On a choisit d'enregistrer les tickets dans une base de données persistante.
+Chaque ticket possède un liste de paiement.
+Pour permettre des test et une démonstration plus facile, notre système fonctionne avec les secondes comme unité de temps.
+Chaque seconde passée augmente le prix de 3 centimes et on doit sortir 15 secondes après le dernier paiement.
+
+Pour l'affichage on utilise des pages jsp et des Servlets.
+Notre EJB (TicketService) gère les tickets en base de données.
+
+
+## 2. Utilisation
+
+On arrive sur la page d'accueil où on peut accéder à la borne d'entrée du parking.
+Si on clique sur la borne entrée elle génère un ticket pour nous et on arrive dans le parking ou on à accès aux bornes de paiement et de sortie.
+On peut alors aller à la borne de paiement qui nous propose par exemple de payer notre ticket en cours ou de voir nos récapitulatif de paiement.
+La borne de sortie permet de sortir du parking si l'on a payé notre ticket dans les 15 dernières secondes.
+
+
+## 3. Configuration de notre projet
+
+On à utilisé IntelliJ pour développer notre projet.
+On à utilisé le serveur d'application Wildfly 30.0.0

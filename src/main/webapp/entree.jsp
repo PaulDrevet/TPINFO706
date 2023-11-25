@@ -17,14 +17,14 @@
     <div class="flex justify-evenly w-full pt-10">
         <a href="paiement" class="w-1/4">
 
-        <div class="bg-slate-500 hover:bg-slate-800 ease-in-out shadow-xl duration-300 hover:cursor-pointer p-10 rounded-3xl w-full">
+        <div class="border-white border-2 hover:bg-neutral-800 ease-in-out shadow-xl duration-300 hover:cursor-pointer p-10 rounded-3xl w-full">
             <p>Borne paiement</p>
             <img src="assets/paiement.png" alt="aveugle" width="40%">
         </div>
         </a>
 
         <a href="sortie" class="w-1/4">
-        <div class="bg-slate-500 hover:bg-slate-800 ease-in-out shadow-xl duration-300 hover:cursor-pointer p-10 rounded-3xl w-full">
+        <div class="border-white border-2 hover:bg-neutral-800 ease-in-out shadow-xl duration-300 hover:cursor-pointer p-10 rounded-3xl w-full">
             <p>Borne sortie</p>
                 <img src="assets/656140.png" alt="aveugle" width="40%">
         </div>
