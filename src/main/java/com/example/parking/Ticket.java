@@ -80,7 +80,6 @@ public class Ticket {
     public double calculerTotal(){
         double montant = 0;
         for (Paiement paiement : this.paiements){
-            System.out.println(paiement.getMontant());
             montant += paiement.getMontant();
         }
         return montant;

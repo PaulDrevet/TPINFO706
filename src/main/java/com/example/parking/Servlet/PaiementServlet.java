@@ -21,7 +21,6 @@ public class PaiementServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 
         String valeurBouton = request.getParameter("boutonSubmit");
-        System.out.println(valeurBouton);
 
         HttpSession session = request.getSession();
         Long id = (Long) session.getAttribute("ticketId");
@@ -39,7 +38,6 @@ public class PaiementServlet extends HttpServlet {
                 request.setAttribute("date_paiement", ticket.getLastDatePaiement());
                 request.setAttribute("aPaye", true);
             }
-            System.out.println(request.getAttribute("date_paiement"));
             try {
                 request.getRequestDispatcher("/recapitulatif.jsp").forward(request, response);
             } catch (ServletException | IOException e) {
@@ -50,8 +48,6 @@ public class PaiementServlet extends HttpServlet {
             Paiement paiement = new Paiement(valeurBouton, ticket.calculerMontant(), ticket);
             ticket.addPaiement(paiement);
             ticketService.updateTicket(ticket);
-            System.out.println(ticket.getPaiement());
-
             try {
                 request.getRequestDispatcher("/entree.jsp").forward(request, response);
             } catch (ServletException | IOException e) {
