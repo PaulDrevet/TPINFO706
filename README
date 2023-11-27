@@ -20,7 +20,7 @@ Notre EJB (TicketService) gère les tickets en base de données.
 
 On arrive sur la page d'accueil où on peut accéder à la borne d'entrée du parking.
 Si on clique sur la borne entrée elle génère un ticket pour nous et on arrive dans le parking ou on à accès aux bornes de paiement et de sortie.
-On peut alors aller à la borne de paiement qui nous propose par exemple de payer notre ticket en cours ou de voir nos récapitulatif de paiement.
+On peut alors aller à la borne de paiement qui nous propose par exemple de payer notre ticket en cours ou de voir notre récapitulatif de paiement.
 La borne de sortie permet de sortir du parking si l'on a payé notre ticket dans les 15 dernières secondes.
 
 
