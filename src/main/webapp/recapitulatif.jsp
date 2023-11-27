@@ -2,6 +2,7 @@
 <jsp:useBean id="ticket_id" scope="request" class="java.lang.Long"/>
 <jsp:useBean id="total" scope="request" class="java.lang.Double"/>
 <jsp:useBean id="date_entree" scope="request" class="java.util.Date"/>
+<jsp:useBean id="typePaiement" scope="request" class="java.lang.String"/>
 <jsp:useBean id="datePaiement" scope="request" class="java.util.Date"/>
 <jsp:useBean id="aPaye" scope="request" class="java.lang.Boolean"/>
 
@@ -18,7 +19,7 @@
             }
             else {
                 document.getElementById('messageMontant').innerText = "Total des paiements: ${total}$"
-                document.getElementById('messageDate').innerText = "Dernier paiement  le : ${datePaiement.day}/${datePaiement.month} à ${datePaiement.hours}h${datePaiement.minutes}"
+                document.getElementById('messageDate').innerText = "Dernier paiement  le ${datePaiement.day}/${datePaiement.month} à ${datePaiement.hours}h${datePaiement.minutes} par ${typePaiement}."
             }
         }
 
@@ -38,7 +39,7 @@
             <div class="card-body">
                 <h2 class="card-header justify-center pb-4">Recapitulatif de vos paiements</h2>
                 <p class="text-content2">Numéro de ticket : ${ticket_id}</p>
-                <p class="text-content2">Date d'entrée : ${date_entree.day}/${date_entree.month}
+                <p class="text-content2">Date d'entrée : ${date_entree.day}/${date_entree.month} à ${date_entree.hours}h${date_entree.minutes}</p>
                 <p class="text-content2" id="messageMontant"></p>
                 <p class="text-content2" id="messageDate"></p>
             </div>

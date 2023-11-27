@@ -32,10 +32,12 @@ public class PaiementServlet extends HttpServlet {
             request.setAttribute("date_entree", ticket.getDateEntree());
             if (ticket.getPaiement().isEmpty()){
                 request.setAttribute("date_paiement", null);
+                request.setAttribute("typePaiement", null);
                 request.setAttribute("aPaye", false);
             }
             else{
                 request.setAttribute("date_paiement", ticket.getLastDatePaiement());
+                request.setAttribute("typePaiement", ticket.getLastTypePaiement());
                 request.setAttribute("aPaye", true);
             }
             try {
@@ -46,6 +48,7 @@ public class PaiementServlet extends HttpServlet {
         }
         else{
             Paiement paiement = new Paiement(valeurBouton, ticket.calculerMontant(), ticket);
+            System.out.println(paiement.getTypePaiement());
             ticket.addPaiement(paiement);
             ticketService.updateTicket(ticket);
             try {

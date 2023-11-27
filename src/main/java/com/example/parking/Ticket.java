@@ -44,6 +44,11 @@ public class Ticket {
         return this.paiements.get(paiements.size() - 1).getDatePaiement();
     }
 
+    public String getLastTypePaiement(){
+        return this.paiements.get(paiements.size() - 1).getTypePaiement();
+    }
+
+
     public List<Paiement> getPaiement(){
         return this.paiements;
     }
@@ -94,7 +99,7 @@ public class Ticket {
             Date now = new Date();
             Date dernierPaiment = this.paiements.get(paiements.size() - 1).getDatePaiement();
             duration = Duration.between(dernierPaiment.toInstant(), now.toInstant());
-            return duration.toSeconds() < 15;
+            return duration.toSeconds() < 15    ;
         }
     }
 }

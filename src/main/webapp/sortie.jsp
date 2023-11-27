@@ -42,7 +42,7 @@
 
 <div class="w-screen">
     <div class="w-screen flex justify-center p-10 mb-10 bg-red-800">
-        <h1 class="text-3xl">Borne paiement</h1>
+        <h1 class="text-3xl">Borne sortie</h1>
     </div>
     <div class="w-screen flex justify-center pt-8">
         <form method="post" action="sortie">

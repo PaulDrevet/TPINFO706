@@ -34,6 +34,10 @@ public class Paiement {
         this.ticket = ticket;
     }
 
+    public String getTypePaiement() {
+        return typePaiement;
+    }
+
     public double getMontant() {
         return montant;
     }
